@@ -1,7 +1,8 @@
 " Mac 심볼릭 링크
 " ln -s ~/ideavim/.ideavimrc ~/.ideavimrc
 " Window 심볼릭 파일 링크
-" mklink C:\Users\<계정>\.ideavimrc C:\Users\<계정>\ideavim\ideavimrc
+" cmd.exe (관리자 권한 실행)
+" mklink %USERPROFILE%\.ideavimrc %USERPROFILE%\IdeaProjects\ideavim\.ideavimrc
 
 " leader key
 let mapleader = ' '
