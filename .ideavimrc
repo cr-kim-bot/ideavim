@@ -1,0 +1,150 @@
+" Mac 심볼릭 링크
+" ln -s ~/ideavim/.ideavimrc ~/.ideavimrc
+" Window 심볼릭 파일 링크
+" mklink C:\Users\<계정>\.ideavimrc C:\Users\<계정>\ideavim\ideavimrc
+
+" leader key
+let mapleader = ' '
+
+set whichwrap+=<,>,[,]
+
+" move to the next character occurrence
+noremap ' ;
+
+" redo
+noremap U <C-r>
+
+" map black whole register
+noremap \ "_
+
+" paste over without overwriting default register
+xnoremap p P
+
+" sync vim clipboard with OS clipboard
+
+set clipboard^=unnamed,unnamedplus
+
+" jump between angle brackets [shift + 5]
+set matchpairs+=<:>
+
+" smart line joining [shift + j]
+set ideajoin
+
+" NERDTree
+set NERDTree
+
+" open config
+noremap <leader>cc :edit ~/.ideavimrc<cr>
+
+" source config
+noremap <leader>cs :source ~/.ideavimrc<cr>:nohlsearch<cr>
+
+" highlight search results
+set hlsearch
+
+" remove search highlights
+noremap <Esc> :nohlsearch<cr>
+
+" case-insensitive search
+set ignorecase
+
+" enable case-sensitive search when uppercased letter is present
+set smartcase
+
+" search while typing
+set incsearch
+
+" consider camelCase and snake_case words when jumping between words
+
+map w [w
+map e ]w
+map b [b
+map ge ]b
+
+" go to the left split window
+map <A-h> <C-w>h
+" go to the bottom split window
+map <A-j> <C-w>j
+" go to the top split window
+map <A-k> <C-w>k
+" go to the right split window
+map <A-l> <C-w>l
+
+" ideavim에서만 사용가능한 것
+map <leader>wv <Action>(SplitVertically)
+map <leader>wh <Action>(SplitHorizontally)
+map <leader>ww <Action>(Unsplit)
+map <leader>wa <Action>(UnsplitAll)
+
+map <leader>gtc <Action>(GotoClass)
+map <leader>gtf <Action>(GotoFile)
+map <leader>gts <Action>(GotoSymbol)
+map <leader>gta <Action>(GotoAction)
+map <leader>gtd <Action>(GotoDeclaration)
+map <leader>gttd <Action>(GotoTypeDeclaration)
+map <leader>gti <Action>(GotoImplementation)
+map <leader>gtt <Action>(GotoTest)
+map <leader>gtsm <Action>(GotoSuperMethod)
+map <leader>gtl <Action>(GotoLine)
+
+map <leader>ug <Action>(FindUsages)
+map <leader>uu <Action>(ShowUsages)
+map <leader>vs <Action>(ViewSource)
+map <leader>im <Action>(QuickImplementations)
+map <leader>td <Action>(QuickTypeDefinition)
+map <leader>ti <Action>(ExpressionTypeInfo)
+map <leader>sh <Action>(ShowHoverInfo)
+map <leader>oo <Action>(FileStructurePopup)
+
+map <S-f> <Action>(Find)
+map <S-r> <Action>(Replace)
+map <leader>ff <Action>(FindInPath)
+map <leader>fr <Action>(ReplaceInPath)
+
+map <leader>rn <Action>(RenameElement)
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rv <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+
+map <leader>aa <Action>(ShowIntentionActions)
+map <leader>sw <Action>(SurroundWith)
+map <S-space> <Action>(Generate)
+map <S-k> <Action>(EditorDuplicateLines)
+map <C-[> <Action>(EditorCompleteStatement)
+
+map <leader>en <Action>(GotoNextError)
+map <leader>ep <Action>(GotoPreviousError)
+map <leader>lc <Action>(JumpToLastChange)
+map <leader>ll <Action>(RecentLocations)
+map <C-;> <Action>(RecentFiles)
+map <S-h> <Action>(Forward)
+map <S-l> <Action>(Back)
+map <A-[> <Action>(MethodUp)
+map <A-]> <Action>(MethodDown)
+
+map <leader><leader> <Action>(ReformatCode)
+map <leader>oi <Action>(OptimizeImports)
+map <leader>ra <Action>(RearrangeCode)
+
+map <C-j> <Action>(MoveLineDown)
+map <C-k> <Action>(MoveLineUp)
+map <C-S-k> <Action>(MoveStatementUp)
+map <C-S-j> <Action>(MoveStatementDown)
+map <leader>ca <Action>(CopyAbsolutePath)
+map <leader>cn <Action>(CopyFileName)
+map <leader>cp <Action>(CopyContentRootPath)
+
+map <leader>nsf <Action>(NewScratchFile)
+map <leader>qq <Action>(CloseContent)
+map <leader>qa <Action>(CloseAllEditors)
+map n <Action>(NewFile)
+map <S-n> <Action>(NewDir)
+map <leader>re <Action>(RenameFile)
+map <leader>of <Action>(OpenFile)
+map <leader>ri <Action>(RestartIde)
+map <leader>spv <Action>(SelectInProjectView)
+
+" Normal 모드에서 <leader>v를 누르면 Introduce Variable 실행
+nmap <leader>iv <Action>(IntroduceVariable)
