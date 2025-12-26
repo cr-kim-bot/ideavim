@@ -155,3 +155,6 @@ map <C-w> :action EditorSelectWord<CR>
 
 " 줄 복사
 map <C-p> :action EditorDuplicate<CR>
+
+" 주석 
+nnoremap <C-/> :action CommentByLineComment<CR>
