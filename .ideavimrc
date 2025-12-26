@@ -97,10 +97,10 @@ map <leader>ti <Action>(ExpressionTypeInfo)
 map <leader>sh <Action>(ShowHoverInfo)
 map <leader>oo <Action>(FileStructurePopup)
 
-map <S-f> <Action>(Find)
-map <S-r> <Action>(Replace)
-map <leader>ff <Action>(FindInPath)
-map <leader>fr <Action>(ReplaceInPath)
+map <C-f> <Action>(Find)
+map <C-r> <Action>(Replace)
+map <C-S-f> <Action>(FindInPath)
+map <C-S-r> <Action>(ReplaceInPath)
 
 map <leader>rn <Action>(RenameElement)
 map <leader>rm <Action>(ExtractMethod)
@@ -120,8 +120,8 @@ map <leader>ep <Action>(GotoPreviousError)
 map <leader>lc <Action>(JumpToLastChange)
 map <leader>ll <Action>(RecentLocations)
 map <C-;> <Action>(RecentFiles)
-map <S-h> <Action>(Forward)
-map <S-l> <Action>(Back)
+map <C-h> <Action>(Forward)
+map <C-l> <Action>(Back)
 map <A-[> <Action>(MethodUp)
 map <A-]> <Action>(MethodDown)
 
@@ -149,3 +149,9 @@ map <leader>spv <Action>(SelectInProjectView)
 
 " Normal 모드에서 <leader>v를 누르면 Introduce Variable 실행
 nmap <leader>iv <Action>(IntroduceVariable)
+
+" 단어 선택
+map <C-w> :action EditorSelectWord<CR>
+
+" 줄 복사
+map <C-p> :action EditorDuplicate<CR>
