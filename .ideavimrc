@@ -55,13 +55,6 @@ set smartcase
 " search while typing
 set incsearch
 
-" consider camelCase and snake_case words when jumping between words
-
-map w [w
-map e ]w
-map b [b
-map ge ]b
-
 " go to the left split window
 map <A-h> <C-w>h
 " go to the bottom split window
@@ -107,7 +100,7 @@ map <leader>rm <Action>(ExtractMethod)
 map <leader>rv <Action>(IntroduceVariable)
 map <leader>rf <Action>(IntroduceField)
 map <leader>rs <Action>(ChangeSignature)
-map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+map <leader>rq <Action>(Refactorings.QuickListPopupAction)
 
 map <leader>aa <Action>(ShowIntentionActions)
 map <leader>sw <Action>(SurroundWith)
@@ -142,19 +135,18 @@ map <leader>qq <Action>(CloseContent)
 map <leader>qa <Action>(CloseAllEditors)
 map n <Action>(NewFile)
 map <S-n> <Action>(NewDir)
-map <leader>re <Action>(RenameFile)
+map <S-F6> <Action>(RenameFile)
 map <leader>of <Action>(OpenFile)
 map <leader>ri <Action>(RestartIde)
 map <leader>spv <Action>(SelectInProjectView)
 
-" Normal 모드에서 <leader>v를 누르면 Introduce Variable 실행
 nmap <leader>iv <Action>(IntroduceVariable)
 
-" 단어 선택
 map <C-w> :action EditorSelectWord<CR>
 
-" 줄 복사
 map <C-p> :action EditorDuplicate<CR>
 
-" 주석 
 nnoremap <C-/> :action CommentByLineComment<CR>
+
+map <leader>rr <Action>(Run)
+map <leader>db <Action>(Debug)
